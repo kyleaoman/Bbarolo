@@ -579,33 +579,33 @@ void Header::headwrite_3d (fitsfile *fptr, bool fullHead) {
     fits_update_key_dbl(fptr, "CRPIX1", crpix[0], 10, com, &status);
     fits_update_key_dbl(fptr, "CRVAL1", crval[0], 10, com, &status);
     fits_update_key_dbl(fptr, "CDELT1", cdelt[0], 10, com, &status);
-    fits_update_key_str(fptr, "CTYPE1", ctype[0].c_str(), com, &status);
-    fits_update_key_str(fptr, "CUNIT1", cunit[0].c_str(), com, &status);
+    fits_update_key_str(fptr, "CTYPE1", const_cast<char*>(ctype[0].c_str()), com, &status);
+    fits_update_key_str(fptr, "CUNIT1", const_cast<char*>(cunit[0].c_str()), com, &status);
     
     fits_update_key_dbl(fptr, "CRPIX2", crpix[1], 10, com, &status);
     fits_update_key_dbl(fptr, "CRVAL2", crval[1], 10, com, &status);
     fits_update_key_dbl(fptr, "CDELT2", cdelt[1], 10, com, &status);
-    fits_update_key_str(fptr, "CTYPE2", ctype[1].c_str(), com, &status);
-    fits_update_key_str(fptr, "CUNIT2", cunit[1].c_str(), com, &status);    
+    fits_update_key_str(fptr, "CTYPE2", const_cast<char*>(ctype[1].c_str()), com, &status);
+    fits_update_key_str(fptr, "CUNIT2", const_cast<char*>(cunit[1].c_str()), com, &status);    
     
     fits_update_key_dbl(fptr, "CRPIX3", crpix[2], 10, com, &status);
     fits_update_key_dbl(fptr, "CRVAL3", crval[2], 10, com, &status);
     fits_update_key_dbl(fptr, "CDELT3", cdelt[2], 10, com, &status);
-    fits_update_key_str(fptr, "CTYPE3", ctype[2].c_str(), com, &status);
-    fits_update_key_str(fptr, "CUNIT3", cunit[2].c_str(), com, &status);
+    fits_update_key_str(fptr, "CTYPE3", const_cast<char*>(ctype[2].c_str()), com, &status);
+    fits_update_key_str(fptr, "CUNIT3", const_cast<char*>(cunit[2].c_str()), com, &status);
     if (drval3!=0) fits_update_key_dbl(fptr, "DRVAL3", drval3, 10, com, &status);
-    if (dunit3!="NONE") fits_update_key_str(fptr, "DUNIT3", dunit3.c_str(), com, &status);
-    fits_update_key_str(fptr, "BUNIT", bunit.c_str(), com, &status);
+    if (dunit3!="NONE") fits_update_key_str(fptr, "DUNIT3", const_cast<char*>(dunit3.c_str()), com, &status);
+    fits_update_key_str(fptr, "BUNIT", const_cast<char*>(bunit.c_str()), com, &status);
     
     if (bmaj!=0) fits_update_key_dbl(fptr, "BMAJ", bmaj, 10, com, &status);
     if (bmin!=0) fits_update_key_dbl(fptr, "BMIN", bmin, 10, com, &status);
     fits_update_key_dbl(fptr, "BPA", bpa, 10, com, &status);
-    if (btype!="NONE") fits_update_key_str(fptr, "BTYPE", btype.c_str(), com, &status);
+    if (btype!="NONE") fits_update_key_str(fptr, "BTYPE", const_cast<char*>(btype.c_str()), com, &status);
     //fits_update_key_flt(fptr, "BLANK", blank, 10, com, &status);
     
-    if (object!="NONE") fits_update_key_str(fptr, "OBJECT", object.c_str(), com, &status);
+    if (object!="NONE") fits_update_key_str(fptr, "OBJECT", const_cast<char*>(object.c_str()), com, &status);
     if (epoch!=0) fits_update_key_flt(fptr, "EPOCH", epoch, 10, com, &status);
-    if (telescope!="NONE") fits_update_key_str(fptr, "TELESCOP", telescope.c_str(), com, &status);
+    if (telescope!="NONE") fits_update_key_str(fptr, "TELESCOP", const_cast<char*>(telescope.c_str()), com, &status);
     if (freq0!=0) fits_update_key_dbl(fptr, "FREQ0", freq0, 10, com, &status);
     if (datamax!=0) fits_update_key_dbl(fptr, "DATAMAX", datamax, 10, com, &status);
     if (datamin!=0) fits_update_key_dbl(fptr, "DATAMIN", datamin, 10, com, &status);
@@ -647,23 +647,23 @@ void Header::headwrite_2d (fitsfile *fptr, bool fullHead) {
     fits_update_key_dbl(fptr, "CRPIX1", crpix[0], 10, com, &status);
     fits_update_key_dbl(fptr, "CRVAL1", crval[0], 10, com, &status);
     fits_update_key_dbl(fptr, "CDELT1", cdelt[0], 10, com, &status);
-    fits_update_key_str(fptr, "CTYPE1", ctype[0].c_str(), com, &status);
-    fits_update_key_str(fptr, "CUNIT1", cunit[0].c_str(), com, &status);
+    fits_update_key_str(fptr, "CTYPE1", const_cast<char*>(ctype[0].c_str()), com, &status);
+    fits_update_key_str(fptr, "CUNIT1", const_cast<char*>(cunit[0].c_str()), com, &status);
     
     fits_update_key_dbl(fptr, "CRPIX2", crpix[1], 10, com, &status);
     fits_update_key_dbl(fptr, "CRVAL2", crval[1], 10, com, &status);
     fits_update_key_dbl(fptr, "CDELT2", cdelt[1], 10, com, &status);
-    fits_update_key_str(fptr, "CTYPE2", ctype[1].c_str(), com, &status);
-    fits_update_key_str(fptr, "CUNIT2", cunit[1].c_str(), com, &status);
+    fits_update_key_str(fptr, "CTYPE2", const_cast<char*>(ctype[1].c_str()), com, &status);
+    fits_update_key_str(fptr, "CUNIT2", const_cast<char*>(cunit[1].c_str()), com, &status);
     
-    fits_update_key_str(fptr, "BUNIT", bunit.c_str(), com, &status);
+    fits_update_key_str(fptr, "BUNIT", const_cast<char*>(bunit.c_str()), com, &status);
     
     if (bmaj!=0) fits_update_key_dbl(fptr, "BMAJ", bmaj, 10, com, &status);
     if (bmin!=0) fits_update_key_dbl(fptr, "BMIN", bmin, 10, com, &status);
     if (bpa!=0)  fits_update_key_dbl(fptr, "BPA", bpa, 10, com, &status);
-    if (btype!="NONE") fits_update_key_str(fptr, "BTYPE", btype.c_str(), com, &status);
+    if (btype!="NONE") fits_update_key_str(fptr, "BTYPE", const_cast<char*>(btype.c_str()), com, &status);
     if (epoch!=0) fits_update_key_flt(fptr, "EPOCH", epoch, 10, com, &status);
-    fits_update_key_str(fptr, "OBJECT", object.c_str(), com, &status);
+    fits_update_key_str(fptr, "OBJECT", const_cast<char*>(object.c_str()), com, &status);
     //fits_update_key_flt(fptr, "BZERO", bzero, 12, com, &status);
     //fits_update_key_flt(fptr, "BSCALE", bscale, 12, com, &status);
     //fits_update_key_flt(fptr, "BLANK", blank, 12, com, &status);
